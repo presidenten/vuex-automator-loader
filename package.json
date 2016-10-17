@@ -1,6 +1,6 @@
 {
   "name": "vuex-automator-loader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Webpack loader that automatically include vuex models to the vuex store on projects with that has its structured in modules rather than as socks drawers",
   "main": "index.js",
   "scripts": {
