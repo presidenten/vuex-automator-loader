@@ -1,7 +1,7 @@
 {
   "name": "vuex-automator-loader",
   "version": "1.0.1",
-  "description": "Webpack loader that automatically include vuex models to the vuex store on projects with that has its structured in modules rather than as socks drawers",
+  "description": "Webpack loader that automatically include vuex models to the vuex store on projects with that has its code structured in modules rather than as \"socks drawers\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,7 @@
 # vuex-automator-loader #
 
 This is a webpack loader that include all the applications vuex models to the vuex store automtically, so that the state is automatically generated.
-The loader assumes that the code structure is modular rather than based on 
+The loader assumes that the code structure is modular rather than based on
 "Socks drawer".
 
 ([See explanation here](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)).
@@ -21,8 +21,8 @@ export default {
 };
 ```
 
-Add loader to preloaders with a regexp that matches all vuex models and plugin to plugins. 
-This example assumes vuex models are stored like. `src/subpath/model/model.js`, 
+Add loader to preloaders with a regexp that matches all vuex models and plugin to plugins.
+This example assumes vuex models are stored like. `src/subpath/model/model.js`,
 and that the modules should be collected in `src/vuexAutomator.js`.
 
 ```javascript
@@ -50,7 +50,7 @@ plugins: [
 ],
 ```
 
-The plugin creates and clears `src/vuexAutomator.js` at the start of each build, 
+The plugin creates and clears `src/vuexAutomator.js` at the start of each build,
 and the loader makes sure it imports modules and exports them as an object.
 
 Here is an example on how to load it from `main.js` with the object spread operator:
@@ -67,13 +67,13 @@ new Vue({
   }),
   render: h => h(app),
 });
-``` 
+```
 
 ## Known issues ##
 
 Even though the the vuex modules wont be added multiple times, there is no check if a module is deleted.
 
-When modules are deleted, the watch needs to be restarted to clear `src/vuexAutomator.js` again.
+When modules are deleted, either the module should be removed from `vuexAutomator.js` manually, or the watch needs to be restarted to clear `src/vuexAutomator.js`.
 
 
 ## License ##
