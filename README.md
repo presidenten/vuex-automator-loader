@@ -1,11 +1,12 @@
 # vuex-automator-loader #
 
-This is a webpack loader that include all the applications vuex models to the vuex store automtically, so that the state is automatically generated.
-The loader assumes that the code structure is modular rather than based on
-"Socks drawer".
+This is a webpack loader that include all the applications vuex models to the vuex store automtically, so that the `Vuex.store`s modules are automatically populated.
+The loader assumes that the code structure is modular where components have everything they need in their folders, rather than based on
+"Socks drawer" where files are grouped by whether they are actions, getters etc.
 
 ([See explanation here](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)).
 
+Having the file structure split up into modules makes the vuex.store constructor a bit messy where you need to include all models into main and add them in the constructor. This loader takes care of that hurdle so you can have a nice folder structure and still have maximum coding pleasure.
 
 ## Usage ##
 
