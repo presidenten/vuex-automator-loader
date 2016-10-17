@@ -4,7 +4,7 @@ const fs = require('fs');
 
 module.exports = {};
 
-module.exports.loader = function(source, map) {
+module.exports = function(source, map) {
   const config = loaderUtils.parseQuery(this.query);
   const relativePath = '.' + this.resourcePath.slice(config.srcRoot.length);
   const moduleName = relativePath.slice(relativePath.lastIndexOf('/') + 1).slice(0, -3);
@@ -19,3 +19,4 @@ module.exports.loader = function(source, map) {
   return source;
 };
 
+module.exports.plugin = require('./plugin.js');
