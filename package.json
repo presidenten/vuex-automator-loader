@@ -1,0 +1,27 @@
+{
+  "name": "vuex-automator-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader that automatically include vuex models to the vuex store on projects with that has its structured in modules rather than as socks drawers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/presidenten/vuex-automator-loader.git"
+  },
+  "keywords": [
+    "vuex",
+    "webpack",
+    "webpack-loader"
+  ],
+  "author": "Johan Hernefeldt <johans.inbox@gmail.com> (https://github.com/presidenten)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/presidenten/vuex-automator-loader/issues"
+  },
+  "homepage": "https://github.com/presidenten/vuex-automator-loader#readme",
+  "devDependencies": {
+    "loader-utils": "^0.2.16"
+  }
+}
