@@ -2,8 +2,6 @@ const loaderUtils = require("loader-utils");
 const path = require('path');
 const fs = require('fs');
 
-module.exports = {};
-
 /**
  * Export the loader function
  */
