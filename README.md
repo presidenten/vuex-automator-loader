@@ -1,8 +1,7 @@
 # vuex-automator-loader #
 
-This is a webpack loader that include all the applications vuex models to the vuex store automtically, so that the `Vuex.store`s modules are automatically populated.
-The loader assumes that the code structure is modular where components have everything they need in their folders, rather than based on
-"Socks drawer" where files are grouped by whether they are actions, getters etc.
+This is a webpack loader that populates the vuex store automtically with all the applications vuex models.
+The loader assumes that the code structure is modular where components have everything they need in their folders (view.vue, model.js, test.spec.js etc in same folder), rather than based on "Socks drawer" where files are grouped by their types (./actions/action1.js, ./getters/getter1.js etc).
 
 ([See explanation here](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)).
 
@@ -22,9 +21,11 @@ export default {
 };
 ```
 
-Add loader to preloaders with a regexp that matches all vuex models and plugin to plugins.
-This example assumes vuex models are stored like. `src/subpath/model/model.js`,
-and that the modules should be collected in `src/vuexAutomator.js`.
+Add the `vuex-automator-loader` to preloaders with a regexp that matches all vuex models, and then add the `vuex-automator-loader` plugin to plugins.
+This example assumes vuex models are stored so that the module foldername and modules model filename have the same name - `src/subpath/module1/module1.js`. But the regexp could ofcourse match anything.
+This example also specifies that all the found models should be collected in `src/vuexAutomator.js`.
+
+The plugin creates and clears `src/vuexAutomator.js` at the start of each build so that there is always something for `main.js` to import, which avoids build error at an early stage in the development.
 
 ```javascript
 var vuexAutomatorPlugin = require('vuex-automator-loader').plugin;
@@ -51,10 +52,7 @@ plugins: [
 ],
 ```
 
-The plugin creates and clears `src/vuexAutomator.js` at the start of each build,
-and the loader makes sure it imports modules and exports them as an object.
-
-Here is an example on how to load it from `main.js` with the object spread operator:
+Here is an example on how to load the resulting object from `main.js` by using the object spread operator:
 ```javascript
 import * as vuexModules from './vuexAutomator.js';
 
@@ -74,7 +72,7 @@ new Vue({
 
 Even though the the vuex modules wont be added multiple times, there is no check if a module is deleted.
 
-When modules are deleted, either the module should be removed from `vuexAutomator.js` manually, or the watch needs to be restarted to clear `src/vuexAutomator.js`.
+When modules are deleted the module should either be removed from `vuexAutomator.js` manually, or the watch needs to be restarted..
 
 
 ## License ##
