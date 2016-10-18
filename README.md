@@ -36,7 +36,7 @@ var vuexAutomatorPath = path.normalize(path.join(srcRoot, '/vuexAutomator.js'));
 
 preloaders: [
   {
-    test: /\b(\w+)\/+\1\b\.js$/,
+    test: /\b(\w+)(\/|\\)+\1\b\.js$/,
     loader: 'vuex-automator',
     query: {
       srcRoot:   srcRoot,
