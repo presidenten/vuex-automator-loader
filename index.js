@@ -9,7 +9,7 @@ module.exports = {};
  */
 module.exports = function(source, map) {
   const config = loaderUtils.parseQuery(this.query);
-  const relativePath = '.' + this.resourcePath.slice(config.srcRoot.length);
+  const relativePath = '.' + this.resourcePath.slice(config.srcRoot.length).replace(/\\/g, '/');
   const moduleName = relativePath.slice(relativePath.lastIndexOf('/') + 1).slice(0, -3);
   const file = fs.readFileSync(config.collector).toString();
 
