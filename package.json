@@ -23,5 +23,8 @@
   "homepage": "https://github.com/presidenten/vuex-automator-loader#readme",
   "devDependencies": {
     "loader-utils": "^0.2.16"
+  },
+  "dependencies": {
+    "camelcase": "^4.0.0"
   }
 }
