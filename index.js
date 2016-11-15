@@ -1,7 +1,7 @@
 const loaderUtils = require('loader-utils');
 const path = require('path');
 const fs = require('fs');
-const camelCase = require('camelCase');
+const camelCase = require('camelcase');
 
 /**
  * Export the loader function
