@@ -13,8 +13,8 @@ module.exports = function(source, map) {
   const file = fs.readFileSync(config.collector).toString();
 
   if(file.indexOf(moduleName) < 0) {
-    const importStatement = 'import _' + moduleName + 'Module from \'' + relativePath + '\'; // eslint-disable-line\n';
-    const exportStatement = 'export const ' + moduleName + ' = _' + moduleName + 'Module;  // eslint-disable-line\n\n'
+    const importStatement = 'import _' + moduleName + ' from \'' + relativePath + '\'; // eslint-disable-line\n';
+    const exportStatement = 'export const ' + moduleName + ' = _' + moduleName + ';  // eslint-disable-line\n\n'
 
     fs.appendFileSync(config.collector, importStatement + exportStatement);
   }
