@@ -1,6 +1,6 @@
 # vuex-automator-loader #
 
-# DEPRICATED
+# DEPRECATED
 This was my first attempt to solve the problem. Use any of these instead:
 - [webpack-context-hmr](https://github.com/presidenten/webpack-context-hmr)
 - [webpack-context-vuex-hmr](https://github.com/presidenten/webpack-context-vuex-hmr)
