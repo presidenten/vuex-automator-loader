@@ -1,5 +1,12 @@
 # vuex-automator-loader #
 
+# DEPRICATED
+This was my first attempt to solve the problem. Use any of these instead:
+- [webpack-context-hmr](https://github.com/presidenten/webpack-context-hmr)
+- [webpack-context-vuex-hmr](https://github.com/presidenten/webpack-context-vuex-hmr)
+
+## Intro
+
 This is a webpack loader that populates the vuex store automtically with all the applications vuex models.
 The loader assumes that the code structure is modular where components have everything they need in their folders (view.vue, model.js, test.spec.js etc in same folder), rather than based on "Socks drawer" where files are grouped by their types (./actions/action1.js, ./getters/getter1.js etc).
 
